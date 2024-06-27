@@ -1,0 +1,89 @@
+# Editor specific files
+.vscode/
+.idea/
+*.iml
+
+# Eclipse specific files
+*.pydevproject
+.project
+.metadata
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# IntelliJ specific files
+*.ipr
+*.iws
+*.idea/
+*.iml
+out/
+
+# Maven specific files
+/logs/
+target/
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle specific files
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Java specific files
+*.class
+*.jar
+*.war
+*.ear
+*.jpi
+*.hpi
+
+# STS specific files
+.springBeans
+
+# Others
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp
+
+# Spring Boot specific files
+*.log
+spring-boot-app.log
+!src/main/resources/
+!src/main/resources/static/
+!src/main/resources/templates/
+
+# Logs
+/logs
+*.log
+*.log.*
+
+# Temp files
+*.tmp
+*.temp
+
+# IDEs
+*.idea/
+*.vscode/
+*.project
+*.classpath
+*.metadata/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+
+# OS generated files
+.DS_Store
+Thumbs.db
