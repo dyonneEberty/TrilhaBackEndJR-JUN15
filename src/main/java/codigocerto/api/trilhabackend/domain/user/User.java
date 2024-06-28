@@ -26,7 +26,13 @@ public class User implements UserDetails {
     private Long id;
     private String login;
     private String password;
-    private Enum role;
+    private UserRole role;
+
+    public User(String login, String password, UserRole role) {
+        this.login = login;
+        this.password = password;
+        this.role = role;
+    }
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Task> tasks;
