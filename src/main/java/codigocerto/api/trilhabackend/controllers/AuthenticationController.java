@@ -1,8 +1,10 @@
 package codigocerto.api.trilhabackend.controllers;
 
 import codigocerto.api.trilhabackend.domain.user.AuthenticationDTO;
+import codigocerto.api.trilhabackend.domain.user.LoginResponseDTO;
 import codigocerto.api.trilhabackend.domain.user.RegisterDTO;
 import codigocerto.api.trilhabackend.domain.user.User;
+import codigocerto.api.trilhabackend.infra.security.TokenService;
 import codigocerto.api.trilhabackend.repository.UserRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class AuthenticationController {
 
     @Autowired
     UserRepository repository;
+    @Autowired
+    TokenService tokenService;
 
     @Autowired
     AuthenticationManager authenticationManager;
@@ -31,7 +35,9 @@ public class AuthenticationController {
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.login(), data.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        return ResponseEntity.ok().build();
+        var token = tokenService.generateToken((User) auth.getPrincipal());
+
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")
