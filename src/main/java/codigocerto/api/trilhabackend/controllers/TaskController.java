@@ -53,7 +53,7 @@ public class TaskController {
     @Transactional
     public ResponseEntity deleteTask(@PathVariable Long id){
 
-        repository.deleteById(id);
+        this.repository.deleteById(id);
 
         return ResponseEntity.noContent().build();
     }
