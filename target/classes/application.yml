@@ -1,7 +1,7 @@
 api:
   security:
     token:
-      secret: ${JWT_SECRET:123456}
+      secret: ${JWT_SECRET:my-secret-key}
 spring:
   datasource:
     url: jdbc:sqlite:memory:myDb?cache=shared
