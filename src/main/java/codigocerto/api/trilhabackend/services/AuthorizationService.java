@@ -13,6 +13,7 @@ public class AuthorizationService implements UserDetailsService {
     @Autowired
     UserRepository repository;
 
+    // método responsavel por recuperar as informacoes no BD, e comparar no momento de efetuar login
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         return repository.findByLogin(username);
